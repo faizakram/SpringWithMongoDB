@@ -10,6 +10,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import com.Spring.Model.Car;
+import com.Spring.Model.ChatHistory;
+import com.Spring.Model.Reports;
 
 /**
 * 
@@ -49,5 +51,15 @@ public class CarDaoImpl implements CarDao {
     public List < Car > findAll() {
         return (List < Car > ) mongoTemplate.findAll(Car.class);
     }
+    
+    public void updateChatHistory(ChatHistory chatHistory) {
+        mongoTemplate.save(chatHistory);
+    }
+
+	@Override
+	public void create(Reports reports) {
+		// TODO Auto-generated method stub
+		mongoTemplate.save(reports,"DAILYREPORTS");
+	}
  
 }

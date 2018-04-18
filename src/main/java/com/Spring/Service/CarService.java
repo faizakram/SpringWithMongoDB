@@ -3,6 +3,8 @@ package com.Spring.Service;
 import java.util.List;
 
 import com.Spring.Model.Car;
+import com.Spring.Model.ChatHistory;
+import com.Spring.Model.Reports;
 
 /**
 * 
@@ -12,6 +14,8 @@ import com.Spring.Model.Car;
 public interface CarService {
  
     public void create(Car car);
+    
+    public void createChat(ChatHistory car);
  
     public void update(Car car);
  
@@ -22,4 +26,7 @@ public interface CarService {
     public Car find(Car car);
  
     public List < Car > findAll();
+
+	public void create(Reports reports);
+    
 }

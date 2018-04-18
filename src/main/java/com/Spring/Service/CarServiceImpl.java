@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.Spring.DAO.CarDao;
 import com.Spring.Model.Car;
+import com.Spring.Model.ChatHistory;
+import com.Spring.Model.Reports;
 
 /**
 * 
@@ -42,4 +44,16 @@ public class CarServiceImpl implements CarService {
     public void deleteAll() {
         carDao.deleteAll();
     }
+
+	@Override
+	public void createChat(ChatHistory chatHistory) {
+		// TODO Auto-generated method stub
+		carDao.updateChatHistory(chatHistory);
+	}
+
+	@Override
+	public void create(Reports reports) {
+		// TODO Auto-generated method stub
+		carDao.create(reports);
+	}
 }
